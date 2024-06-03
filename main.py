@@ -22,7 +22,12 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+@app.get("/")
 
+async def welcome() -> dict:
+    return {
+        "msg" : "welcome"
+    }
     
 
 app.include_router(guestbook_router)
